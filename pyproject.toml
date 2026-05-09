@@ -1,0 +1,38 @@
+[project]
+name = "my-agent-project"
+version = "0.1.0"
+description = "Standard AI Agent Project Structure (4-Layer Architecture)"
+requires-python = ">=3.11"
+
+dependencies = [
+    "anthropic>=0.40.0",
+    "openai>=1.50.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+redis     = ["redis>=5.0.0"]
+langgraph = ["langgraph>=0.2.0", "langchain-anthropic>=0.3.0", "langchain-core>=0.3.0"]
+crewai    = ["crewai>=0.80.0"]
+pydantic-ai = ["pydantic-ai>=1.0.0"]
+all = [
+    "redis>=5.0.0",
+    "langgraph>=0.2.0",
+    "langchain-anthropic>=0.3.0",
+    "langchain-core>=0.3.0",
+    "crewai>=0.80.0",
+    "pydantic-ai>=1.0.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-mock>=3.14.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths    = ["tests"]
+
+[tool.ruff]
+line-length = 100
