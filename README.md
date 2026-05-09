@@ -1,4 +1,4 @@
-# my-agent-project
+# scaffold-agents
 
 > Switch between LangGraph, CrewAI, and Pydantic AI **without rewriting your business logic.**
 > 90% of your code stays the same when you change frameworks or models.
@@ -8,8 +8,8 @@
 ---
 
 ```bash
-git clone https://github.com/your-username/my-agent-project
-cd my-agent-project
+git clone https://github.com/your-username/scaffold-agents
+cd scaffold-agents
 pip install -e ".[dev]"
 pytest tests/unit/ -v          # ✅ 26 passed — no API key needed
 cp .env.example .env           # add your API key, then:
@@ -124,7 +124,7 @@ Every LLM call and tool invocation is tracked with a `run_id`:
 ## Project Structure
 
 ```
-my-agent-project/
+scaffold-agents/
 │
 ├── AGENTS.md                    ← shared rules injected into every agent (DRY)
 │
