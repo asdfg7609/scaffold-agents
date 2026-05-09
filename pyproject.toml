@@ -1,5 +1,5 @@
 [project]
-name = "my-agent-project"
+name = "scaffold-agents"
 version = "0.1.0"
 description = "Standard AI Agent Project Structure (4-Layer Architecture)"
 requires-python = ">=3.11"
