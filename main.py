@@ -68,7 +68,7 @@ def run_langgraph(task: str):
         r = build_research_graph().invoke({"messages": [HumanMessage(content=task)]})
         print(f"✅ {r['messages'][-1].content}")
     except ImportError as e:
-        print(f"❌ {e}\n   pip install 'my-agent-project[langgraph]'")
+        print(f"❌ {e}\n   pip install 'scaffold-agents[langgraph]'")
 
 
 def run_crewai(task: str):
@@ -77,7 +77,7 @@ def run_crewai(task: str):
         from adapters.crewai.crew import build_research_crew
         print(build_research_crew().kickoff(inputs={"topic": task}))
     except ImportError as e:
-        print(f"❌ {e}\n   pip install 'my-agent-project[crewai]'")
+        print(f"❌ {e}\n   pip install 'scaffold-agents[crewai]'")
 
 
 def run_eval():
@@ -94,7 +94,7 @@ def run_eval():
 
 
 def main():
-    p = argparse.ArgumentParser(description="my-agent-project", formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = argparse.ArgumentParser(description="scaffold-agents", formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("task",        nargs="?", default="")
     p.add_argument("--agent",     default="research_agent", choices=["research_agent","analysis_agent","report_agent","pipeline"])
     p.add_argument("--framework", default="native",         choices=["native","langgraph","crewai"])
