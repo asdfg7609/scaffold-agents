@@ -11,7 +11,7 @@ from core.registry.agent_registry import AgentRegistry
 
 def generate_agent_card(agent_registry: AgentRegistry) -> dict:
     base_url   = os.environ.get("A2A_BASE_URL",   "http://localhost:8080")
-    agent_name = os.environ.get("A2A_AGENT_NAME", "my-agent-project")
+    agent_name = os.environ.get("A2A_AGENT_NAME", "scaffold-agents")
 
     skills = [
         {"id": a.get_name(), "name": a.get_name().replace("_"," ").title(),
